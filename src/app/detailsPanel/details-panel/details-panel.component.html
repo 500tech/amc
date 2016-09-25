@@ -1,4 +1,5 @@
 <div *ngIf="isPanelDisplayed">
+  <!-- TODO: notifications list that accepts notifications input -->
   <div *ngFor="let notification of notifications">
     <p>{{ notification.Time }}</p>
     <span [innerHTML]="notification.Text"></span>

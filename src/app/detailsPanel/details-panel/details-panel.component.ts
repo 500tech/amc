@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { IRootState } from '../../reducers';
 import { NgRedux } from 'ng2-redux';
 
