@@ -1,7 +1,9 @@
-import { Component, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
-import { NgRedux } from 'ng2-redux';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { select } from 'ng2-redux';
 import { IRootState } from '../../reducers';
 import { UiActions } from '../../actions/ui.actions';
+
+import { getTicketList } from '../../selectors';
 
 @Component({
   selector: 'amc-ticket-list',
@@ -10,26 +12,8 @@ import { UiActions } from '../../actions/ui.actions';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class TicketListComponent {
-  ticketList = []; // TODO: use ticket interface
+  @select(getTicketList) ticketList$; // TODO: use ticket interface
 
-  constructor(
-    private ngRedux: NgRedux<IRootState>,
-    private uiActions: UiActions,
-    private changeDetecor: ChangeDetectorRef) {
-
-    ngRedux.connect(this.mapStateToThis, null)(this);
-  }
-  
-  mapStateToThis(state:IRootState) {
-    const userDetails = state.amcData.UserDetails;
-    const ticketList = Object.keys(userDetails).map((accountId) => {
-      return Object.assign({}, userDetails[accountId], {accountId});
-    })
-
-    if (this.ticketList != ticketList) changeDetecor.markForCheck();
-
-    return {
-      ticketList
-    };
+  constructor(private uiActions: UiActions) {
   }
 }
