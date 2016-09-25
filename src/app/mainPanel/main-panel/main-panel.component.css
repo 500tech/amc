@@ -1,0 +1,6 @@
+.panel-header {
+    background: blue;
+    display: inline-block;
+    color: white;
+    padding: 0 10px;
+}

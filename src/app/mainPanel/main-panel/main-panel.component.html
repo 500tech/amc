@@ -1,0 +1,7 @@
+<div class="panel main-panel">
+    <amc-main-panel-header class="panel-header" (onMinimize)="toggleMinimize()"></amc-main-panel-header>
+    <div [hidden]="isPanelMinimized | async">
+        <amc-main-panel-action-bar></amc-main-panel-action-bar>
+        <amc-ticket-list></amc-ticket-list>
+    </div>
+</div>

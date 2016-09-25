@@ -1,0 +1,4 @@
+<amc-ticket
+    *ngFor="let ticket of ticketList" [ticket]="ticket"
+    (click)="uiActions.selectTicket(ticket.accountId)">
+</amc-ticket>

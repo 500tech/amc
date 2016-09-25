@@ -1,0 +1,8 @@
+<div *ngIf="isPanelDisplayed">
+  <div *ngFor="let notification of notifications">
+    <p>{{ notification.Time }}</p>
+    <span [innerHTML]="notification.Text"></span>
+  </div>
+</div>
+
+

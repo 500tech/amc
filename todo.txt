@@ -1,0 +1,10 @@
+install python and solve node-gyp errors
+add jquery
+support webpack resolve in typescript compiler
+minimize size
+webpack put everything in one file
+ngc, tree shaking - http://blog.mgechev.com/2016/06/26/tree-shaking-angular2-production-build-rollup-javascript/
+typescript seamless-immutable
+webpack compile sass for component style
+angular view encapsulation native fallback
+translation - dynamically load dictionary via AJAX
